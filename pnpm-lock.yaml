@@ -84,6 +84,7 @@ importers:
       orval: ^6.10.3
       react: 18.2.0
       react-dom: 18.2.0
+      react-hook-form: ^7.41.3
       tsconfig: workspace:*
       typescript: ^4.5.3
       ui: workspace:*
@@ -96,6 +97,7 @@ importers:
       next: 13.0.0_7xlrwlvvs7cv2obrs6a5y6oxxq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.41.3_react@18.2.0
       ui: link:../../packages/ui
     devDependencies:
       '@babel/core': 7.20.7
@@ -5082,6 +5084,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hook-form/7.41.3_react@18.2.0:
+    resolution: {integrity: sha512-5QNTmqJtDb88WV5n41b6+AmcDMVyaJ3tccPgHAgS215w3jZ3bmJhDO27kNTr8u4YHNYXmS7p1/4/KachBAlUtw==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:
