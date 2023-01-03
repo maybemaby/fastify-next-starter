@@ -1,5 +1,6 @@
 import { Type } from "@sinclair/typebox";
 import { FastifyPluginCallback } from "fastify";
+import { userRouter } from "./users/userRouter";
 
 // Root api router,
 export const apiRouter: FastifyPluginCallback = (fastify, opts, done) => {
@@ -26,5 +27,6 @@ export const apiRouter: FastifyPluginCallback = (fastify, opts, done) => {
 
   // Register any api routes here:
   // Delete this example
+  fastify.register(userRouter, { prefix: "/users" });
   done();
 };

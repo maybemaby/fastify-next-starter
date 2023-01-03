@@ -4,10 +4,15 @@ import { build } from "./app";
 import { env } from "./config/env";
 import { config } from "./config/config";
 import { apiRouter } from "./routes/api";
+import supabase from "./plugins/supabase";
+import auth from "./plugins/auth";
 
 const app = build({
   logger: config[env.NODE_ENV].logger,
 });
+
+app.register(supabase);
+app.register(auth);
 
 app.register(cors, {
   origin: ["*", ...env.ALLOWED_ORIGINS.split(",")],

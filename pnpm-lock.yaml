@@ -19,6 +19,7 @@ importers:
       '@fastify/sensible': ^5.2.0
       '@fastify/swagger': ^8.2.1
       '@fastify/type-provider-typebox': ^2.4.0
+      '@prisma/client': ^4.8.0
       '@sinclair/typebox': ^0.25.16
       '@supabase/supabase-js': ^2.2.3
       '@types/node': ^17.0.12
@@ -31,6 +32,7 @@ importers:
       fastify: ^4.11.0
       fastify-plugin: ^4.4.0
       pino-pretty: ^9.1.1
+      prisma: ^4.8.0
       tap: ^16.3.2
       ts-node-dev: ^2.0.0
       tsconfig: workspace:*
@@ -41,6 +43,7 @@ importers:
       '@fastify/sensible': 5.2.0
       '@fastify/swagger': 8.2.1
       '@fastify/type-provider-typebox': 2.4.0_srxu27r7jelwulqij6gi3ymtwi
+      '@prisma/client': 4.8.0_prisma@4.8.0
       '@sinclair/typebox': 0.25.16
       '@supabase/supabase-js': 2.2.3
       dotenv-cli: 6.0.0
@@ -55,6 +58,7 @@ importers:
       eslint: 8.31.0
       eslint-config-custom-server: 0.0.1
       pino-pretty: 9.1.1
+      prisma: 4.8.0
       tap: 16.3.2_typescript@4.9.4
       ts-node-dev: 2.0.0_zpb5kzpnyozdjq4cwaojlul57u
       tsconfig: link:../../packages/tsconfig
@@ -62,6 +66,9 @@ importers:
   apps/web:
     specifiers:
       '@babel/core': ^7.0.0
+      '@supabase/auth-helpers-nextjs': ^0.5.2
+      '@supabase/auth-helpers-react': ^0.3.1
+      '@supabase/supabase-js': ^2.2.3
       '@tanstack/react-query': ^4.20.4
       '@types/node': ^17.0.12
       '@types/react': ^18.0.22
@@ -81,6 +88,9 @@ importers:
       typescript: ^4.5.3
       ui: workspace:*
     dependencies:
+      '@supabase/auth-helpers-nextjs': 0.5.2_qtvf6mjfeick7xf5purdyuznsu
+      '@supabase/auth-helpers-react': 0.3.1_qtvf6mjfeick7xf5purdyuznsu
+      '@supabase/supabase-js': 2.2.3
       '@tanstack/react-query': 4.20.4_biqbaboplfbrettd7655fr4n2y
       axios: 1.2.2
       next: 13.0.0_7xlrwlvvs7cv2obrs6a5y6oxxq
@@ -784,6 +794,28 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
+  /@prisma/client/4.8.0_prisma@4.8.0:
+    resolution: {integrity: sha512-Y1riB0p2W52kh3zgssP/YAhln3RjBFcJy3uwEiyjmU+TQYh6QTZDRFBo3JtBWuq2FyMOl1Rye8jxzUP+n0l5Cg==}
+    engines: {node: '>=14.17'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 4.8.0-61.d6e67a83f971b175a593ccc12e15c4a757f93ffe
+      prisma: 4.8.0
+    dev: false
+
+  /@prisma/engines-version/4.8.0-61.d6e67a83f971b175a593ccc12e15c4a757f93ffe:
+    resolution: {integrity: sha512-MHSOSexomRMom8QN4t7bu87wPPD+pa+hW9+71JnVcF3DqyyO/ycCLhRL1we3EojRpZxKvuyGho2REQsMCvxcJw==}
+    dev: false
+
+  /@prisma/engines/4.8.0:
+    resolution: {integrity: sha512-A1Asn2rxZMlLAj1HTyfaCv0VQrLUv034jVay05QlqZg1qiHPeA3/pGTfNMijbsMYCsGVxfWEJuaZZuNxXGMCrA==}
+    requiresBuild: true
+
   /@rollup/plugin-commonjs/22.0.2_rollup@2.79.1:
     resolution: {integrity: sha512-//NdP6iIwPbMTcazYsiBMbJW7gfmpHom33u1beiIoHDEM0Q9clvtQB1T0efvMqHeKsGohiHo97BCPCkBXdscwg==}
     engines: {node: '>= 12.0.0'}
@@ -1127,6 +1159,31 @@ packages:
       '@stoplight/yaml-ast-parser': 0.0.48
       tslib: 2.4.1
     dev: true
+
+  /@supabase/auth-helpers-nextjs/0.5.2_qtvf6mjfeick7xf5purdyuznsu:
+    resolution: {integrity: sha512-B+sQFVEImAYOJKyyNX1DWqTF2qVf9SocOM1GD4eGHon6ulvLOo2a8V+v1jZAuLOBF6yzVIYnZucuYKZCiNP/Eg==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.0.4
+    dependencies:
+      '@supabase/auth-helpers-shared': 0.2.3_qtvf6mjfeick7xf5purdyuznsu
+      '@supabase/supabase-js': 2.2.3
+    dev: false
+
+  /@supabase/auth-helpers-react/0.3.1_qtvf6mjfeick7xf5purdyuznsu:
+    resolution: {integrity: sha512-g3SFv08Dz9FapNif/ZY1b7qKGlMJDyTLSayHBz3kb3FuYxg7aLWgQtydDhm5AGbc0XtvpIBuhGTIOVevwpdosA==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.0.4
+    dependencies:
+      '@supabase/supabase-js': 2.2.3
+    dev: false
+
+  /@supabase/auth-helpers-shared/0.2.3_qtvf6mjfeick7xf5purdyuznsu:
+    resolution: {integrity: sha512-Xwnd2UQ/VTjTKIuVg1Xl/ryrElbSccOJhC11jbVPHOs7Y6yxzy9APxQs//jj4IpbDH4uOEDCdpMIJ0tzRxj9DQ==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.0.4
+    dependencies:
+      '@supabase/supabase-js': 2.2.3
+    dev: false
 
   /@supabase/functions-js/2.0.0:
     resolution: {integrity: sha512-ozb7bds2yvf5k7NM2ZzUkxvsx4S4i2eRKFSJetdTADV91T65g4gCzEs9L3LUXSrghcGIkUaon03VPzOrFredqg==}
@@ -4916,6 +4973,14 @@ packages:
   /printable-characters/1.0.42:
     resolution: {integrity: sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==}
     dev: true
+
+  /prisma/4.8.0:
+    resolution: {integrity: sha512-DWIhxvxt8f4h6MDd35mz7BJff+fu7HItW3WPDIEpCR3RzcOWyiHBbLQW5/DOgmf+pRLTjwXQob7kuTZVYUAw5w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 4.8.0
 
   /process-on-spawn/1.0.0:
     resolution: {integrity: sha512-1WsPDsUSMmZH5LeMLegqkPDrsGgsWwk1Exipy2hvB0o/F0ASzbpIctSCcZIK1ykJvtTJULEH+20WOFjMvGnCTg==}

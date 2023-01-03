@@ -13,14 +13,13 @@ const authorization: FastifyPluginCallback = (fastify, opts, done) => {
     const token = extractToken(req);
     if (!token) {
       // Using fastify-sensible response helpers
-      return false;
+      return res.unauthorized("Must be logged in to access resource");
     }
     const { allowed, err, user } = await userAllowed(token);
     if (!allowed) {
       return false;
     } else if (user) {
       req.user = user;
-      return true;
     }
   }
 
