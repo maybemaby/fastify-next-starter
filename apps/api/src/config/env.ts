@@ -2,7 +2,7 @@ import { Type } from "@sinclair/typebox";
 import { Value } from "@sinclair/typebox/value";
 
 const Env = Type.Object({
-  NODE_ENV: Type.String(),
+  NODE_ENV: Type.String({ default: "development" }),
   PORT: Type.Number({ default: 5000 }),
   HOST: Type.String({ default: "localhost" }),
   // Accept env variable allowed origins for cors separated by commas
