@@ -9,6 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel --force",
+    "test": "turbo run test",
     "lint": "turbo run lint --filter=!schema --filter=!ui",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

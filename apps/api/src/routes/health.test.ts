@@ -1,14 +1,16 @@
 import t from "tap";
-import { createTestCaller } from "../utils/testCaller";
+import { build } from "../app";
 
-t.test("Health route", (t) => {
-  t.test("Success", async (t) => {
-    const caller = await createTestCaller();
-    const res = await caller.health.health();
+t.test("health endpoint", async (t) => {
+  const app = build();
 
-    t.ok(res.health);
-    t.match(res, { health: "ok" });
+  const res = await app.inject({
+    method: "GET",
+    url: "/heartbeat",
   });
+  const json: unknown = res.json();
+  t.ok(res.statusCode >= 200);
 
-  t.end();
+  t.ok(json);
+  t.has(json, { health: "Good" });
 });
