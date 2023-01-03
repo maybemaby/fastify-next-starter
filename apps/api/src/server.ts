@@ -19,7 +19,7 @@ app.register(helmet);
 // Returns swagger spec JSON when not in production
 if (env.NODE_ENV !== "production") {
   app.get("/spec", async (_req, _res) => {
-    return app.swagger();
+    return app.swagger({ yaml: true });
   });
 }
 
