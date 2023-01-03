@@ -3,17 +3,27 @@ import cors from "@fastify/cors";
 import { build } from "./app";
 import { env } from "./config/env";
 import { config } from "./config/config";
+import { apiRouter } from "./routes/api";
 
 const app = build({
   logger: config[env.NODE_ENV].logger,
 });
 
 app.register(cors, {
-  origin: "*",
+  origin: ["*", ...env.ALLOWED_ORIGINS.split(",")],
   credentials: true,
 });
 
 app.register(helmet);
+
+// Returns swagger spec JSON when not in production
+if (env.NODE_ENV !== "production") {
+  app.get("/spec", async (_req, _res) => {
+    return app.swagger();
+  });
+}
+
+app.register(apiRouter, { prefix: "/api" });
 
 if (env.HOST) {
   app.listen(
