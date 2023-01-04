@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 const Login = () => {
   const supabase = useSupabaseClient();
   const [loading, setLoading] = useState(false);
+  const [formError, setFormError] = useState<string>("");
   const router = useRouter();
   const handleSubmit = async (data: LoginData) => {
     setLoading(true);
@@ -14,6 +15,8 @@ const Login = () => {
     setLoading(false);
     if (!res.error) {
       router.push("/");
+    } else {
+      setFormError(res.error.message);
     }
   };
 
@@ -26,7 +29,11 @@ const Login = () => {
         height: "100vh",
       }}
     >
-      <LoginForm onSubmit={handleSubmit} loading={loading} />
+      <LoginForm
+        onSubmit={handleSubmit}
+        loading={loading}
+        formError={formError}
+      />
     </div>
   );
 };

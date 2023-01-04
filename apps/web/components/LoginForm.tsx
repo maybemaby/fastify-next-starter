@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
 import { Flex, FormField } from "ui";
 import type { LoginData } from "~/types";
+import { FormError } from "./FormError";
 
 interface Props {
   onSubmit: (data: LoginData) => void;
   loading: boolean;
+  formError?: string;
 }
 
-export const LoginForm = ({ onSubmit, loading }: Props) => {
+export const LoginForm = ({ onSubmit, loading, formError }: Props) => {
   const {
     register,
     handleSubmit,
@@ -43,6 +45,7 @@ export const LoginForm = ({ onSubmit, loading }: Props) => {
             <FormField.Error>{errors.password.message}</FormField.Error>
           )}
         </FormField>
+        {formError && <FormError>{formError}</FormError>}
         <button type="submit" disabled={loading}>
           Login
         </button>

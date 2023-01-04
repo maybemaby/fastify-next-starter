@@ -7,7 +7,7 @@ export default function Web() {
   const supabase = useSupabaseClient();
 
   return (
-    <div>
+    <Flex gap={20} direction="column">
       <h1>Web</h1>
       <Button />
       {session && <p>{session.user.id}</p>}
@@ -18,6 +18,6 @@ export default function Web() {
           <button onClick={() => supabase.auth.signOut()}>Sign out</button>
         )}
       </Flex>
-    </div>
+    </Flex>
   );
 }
