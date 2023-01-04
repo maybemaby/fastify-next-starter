@@ -1,0 +1,51 @@
+.default {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.jBetween {
+  justify-content: space-between;
+}
+
+.jAround {
+  justify-content: space-around;
+}
+
+.jCenter {
+  justify-content: center;
+}
+
+.jEnd {
+  justify-content: flex-end;
+}
+
+.jStart {
+  justify-content: flex-start;
+}
+
+.aStart {
+  align-items: flex-start;
+}
+
+.aCenter {
+  align-items: center;
+}
+
+.aEnd {
+  align-items: flex-end;
+}
+
+.aStretch {
+  align-items: stretch;
+}
+
+.aBaseline {
+  align-items: baseline;
+}

@@ -153,6 +153,7 @@ importers:
       '@types/react-dom': ^18.0.6
       '@typescript-eslint/eslint-plugin': ^5.47.1
       '@typescript-eslint/parser': ^5.47.1
+      clsx: ^1.2.1
       esbuild: ^0.16.13
       esbuild-css-modules-plugin: ^2.6.3
       eslint: ^7.32.0
@@ -165,6 +166,7 @@ importers:
       tsup: ^6.5.0
       typescript: ^4.5.2
     dependencies:
+      clsx: 1.2.1
       eslint-plugin-jsx-a11y: 6.6.1_eslint@7.32.0
     devDependencies:
       '@types/react': 18.0.26
@@ -2321,6 +2323,11 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
     dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}

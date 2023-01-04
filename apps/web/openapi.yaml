@@ -1,0 +1,96 @@
+openapi: 3.0.3
+info:
+  title: Fastify Template
+  description: Swagger Spec for Fastify web API
+  version: 0.1.0
+components:
+  schemas: {}
+paths:
+  /heartbeat:
+    get:
+      responses:
+        "200":
+          description: Health check
+          content:
+            application/json:
+              schema:
+                description: Health check
+                type: object
+                properties:
+                  health:
+                    type: string
+                required:
+                  - health
+  /api/:
+    get:
+      responses:
+        "200":
+          description: API Information
+          content:
+            application/json:
+              schema:
+                description: API Information
+                type: object
+                properties:
+                  version:
+                    type: string
+                required:
+                  - version
+  /api/users/me:
+    get:
+      responses:
+        "200":
+          description: Default Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  created_at:
+                    type: string
+                  email:
+                    type: string
+                  phone:
+                    type: string
+                  confirmed_at:
+                    type: string
+                  email_confirmed_at:
+                    type: string
+                  phone_confirmed_at:
+                    type: string
+                required:
+                  - id
+                  - created_at
+  /api/users/register:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  minLength: 3
+                  type: string
+                email:
+                  format: email
+                  type: string
+                password:
+                  minLength: 8
+                  type: string
+                password2:
+                  minLength: 8
+                  type: string
+              required:
+                - name
+                - email
+                - password
+                - password2
+        required: true
+      responses:
+        "200":
+          description: Default Response
+servers:
+  - url: http://localhost:5000

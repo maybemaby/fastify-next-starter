@@ -18,7 +18,14 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
       <LoginForm onSubmit={handleSubmit} loading={loading} />
     </div>
   );

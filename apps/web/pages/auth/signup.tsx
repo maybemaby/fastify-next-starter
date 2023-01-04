@@ -10,7 +10,14 @@ const SignupPage = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
       <SignupForm onSubmit={onSubmit} loading={register.isLoading} />
     </div>
   );
