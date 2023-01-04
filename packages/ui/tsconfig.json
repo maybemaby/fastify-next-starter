@@ -2,5 +2,5 @@
   "extends": "tsconfig/react-library.json",
   "include": ["./src", "tsup.config.ts"],
   "exclude": ["dist", "build", "node_modules"],
-  "files": ["./index.d.ts"]
+  "files": ["./index.d.ts"],
 }

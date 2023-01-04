@@ -79,23 +79,6 @@ const Input = React.forwardRef(function _input(
   );
 });
 
-// const Input =  ({
-//   className,
-//   ...props
-// }: InputHTMLAttributes<HTMLInputElement> & {
-//   hint?: string;
-// }) => {
-//   const ctx = useContext(FormFieldContext);
-//   return (
-//     <input
-//       className={`${className ?? styles.input} ${
-//         ctx.isError && styles.errored
-//       }`}
-//       {...props}
-//     />
-//   );
-// };
-
 const Error = ({
   children,
   className,

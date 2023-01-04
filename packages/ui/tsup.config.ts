@@ -4,6 +4,8 @@ import type { Options } from "tsup";
 
 export default defineConfig((opts) => {
   return {
+    entry: ["./src/index.tsx", "./src/hooks/index.ts"],
+    external: ["react", "react-dom"],
     esbuildPlugins: [cssModulesPlugin({})],
   } as Options;
 });
