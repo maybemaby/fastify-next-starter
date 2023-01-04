@@ -13,8 +13,8 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 
 ### Apps and Packages
 
-- `api`: a Fastify + tRPC app
-- `web`: a [Next.js](https://nextjs.org/) + tRPC app
+- `api`: a Fastify app using Supabase for auth plugin and exposes an OpenAPI spec for generating typesafe clients.
+- `web`: a [Next.js](https://nextjs.org/) app that uses Orval to generate a typesafe axios client
 - `ui`: a stub React component library shared by the `web` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `eslint-config-custom-server`: `eslint` configuration base for server apps
