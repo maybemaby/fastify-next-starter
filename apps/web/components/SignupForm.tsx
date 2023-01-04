@@ -78,6 +78,7 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
             },
           })}
         />
+        <FormField.Hint>Password must be at least 8 characters</FormField.Hint>
         {errors.password && (
           <FormField.Error>{errors.password.message}</FormField.Error>
         )}
