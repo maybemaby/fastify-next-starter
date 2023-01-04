@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.error {
+  color: #d71c1cd1;
+  padding: 0;
+  margin: 0;
+}
+
+.input {
+  border-color: black;
+  border-radius: 0.4rem;
+  border-style: solid;
+  padding: 0.4rem 0.75rem;
+  outline: none;
+}
+
+.input.errored {
+  border-color: #d71c1cd1;
+}
+
+.hint {
+  color: gray;
+}

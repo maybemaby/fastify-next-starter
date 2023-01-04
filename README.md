@@ -1,10 +1,11 @@
-# Fastify tRPC Next.js Starter
+# Fastify Next.js Monorepo Starter
 
 Turborepo setup for using:
 - Fastify
-- tRPC
 - Next.js
+- Supabase Auth
 - ESLint
+- Typescript
 
 ## What's inside?
 
@@ -14,7 +15,6 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 
 - `api`: a Fastify + tRPC app
 - `web`: a [Next.js](https://nextjs.org/) + tRPC app
-- `schema` for sharing zod schemas between the `api` and `web` apps
 - `ui`: a stub React component library shared by the `web` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `eslint-config-custom-server`: `eslint` configuration base for server apps
