@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Flex, FormField } from "ui";
+import { Flex, FormField, PasswordField } from "ui";
 import type { LoginData } from "~/types";
 import { FormError } from "./FormError";
 
@@ -32,15 +32,17 @@ export const LoginForm = ({ onSubmit, loading, formError }: Props) => {
             <FormField.Error>{errors.email.message}</FormField.Error>
           )}
         </FormField>
-        <FormField isError={!!errors.password}>
+        <FormField>
           <FormField.Label htmlFor="password">Password</FormField.Label>
-          <FormField.Input
-            placeholder="Enter your password"
-            type={"password"}
-            {...register("password", {
-              required: { value: true, message: "Must enter your password" },
-            })}
-          />
+          <PasswordField isError={!!errors.password}>
+            <PasswordField.Input
+              placeholder="Enter your password"
+              {...register("password", {
+                required: { value: true, message: "Must enter your password" },
+              })}
+            />
+            <PasswordField.Toggle>Toggle Visible</PasswordField.Toggle>
+          </PasswordField>
           {errors.password && (
             <FormField.Error>{errors.password.message}</FormField.Error>
           )}

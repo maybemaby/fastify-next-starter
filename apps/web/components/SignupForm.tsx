@@ -1,7 +1,7 @@
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import type { PostApiUsersRegisterBody } from "../generated";
-import { Flex, FormField } from "ui";
+import { Flex, FormField, PasswordField } from "ui";
 
 interface Props {
   onSubmit: (data: PostApiUsersRegisterBody) => void;
@@ -66,19 +66,21 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
             <FormField.Error>{errors.email.message}</FormField.Error>
           )}
         </FormField>
-        <FormField isError={!!errors.password}>
+        <FormField>
           <FormField.Label htmlFor="password">Password</FormField.Label>
-          <FormField.Input
-            type="password"
-            placeholder="Enter a strong password"
-            {...register("password", {
-              required: { value: true, message: "Password is required" },
-              minLength: {
-                value: 8,
-                message: "Password must be at least 8 characters",
-              },
-            })}
-          />
+          <PasswordField isError={!!errors.password}>
+            <PasswordField.Input
+              placeholder="Enter a strong password"
+              {...register("password", {
+                required: { value: true, message: "Password is required" },
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              })}
+            />
+            <PasswordField.Toggle>Toggle Visible</PasswordField.Toggle>
+          </PasswordField>
           <FormField.Hint>
             Password must be at least 8 characters
           </FormField.Hint>
@@ -90,17 +92,22 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
           <FormField.Label htmlFor="password2">
             Confirm Password
           </FormField.Label>
-          <FormField.Input
-            placeholder="Re-enter your password"
-            type="password"
-            {...register("password2", {
-              required: { value: true, message: "Password must be confirmed" },
-              minLength: {
-                value: 8,
-                message: "Password must be at least 8 characters",
-              },
-            })}
-          />
+          <PasswordField isError={!!errors.password2}>
+            <PasswordField.Input
+              placeholder="Re-enter your password"
+              {...register("password2", {
+                required: {
+                  value: true,
+                  message: "Password must be confirmed",
+                },
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              })}
+            />
+            <PasswordField.Toggle>Toggle Visible</PasswordField.Toggle>
+          </PasswordField>
           {errors.password2 && (
             <FormField.Error>{errors.password2.message}</FormField.Error>
           )}
