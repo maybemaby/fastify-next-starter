@@ -20,7 +20,6 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
   const preSubmit: SubmitHandler<PostApiUsersRegisterBody> = (
     data: PostApiUsersRegisterBody
   ) => {
-    console.log(data);
     if (data.password !== data.password2) {
       setError("password2", { message: "Passwords must match" });
       return;
@@ -29,11 +28,12 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(preSubmit)}>
+    <form onSubmit={handleSubmit(preSubmit)} name="signup">
       <Flex direction="column" gap={15}>
         <FormField isError={!!errors.name}>
           <FormField.Label htmlFor="name">Name</FormField.Label>
           <FormField.Input
+            id="name"
             placeholder="Enter a name"
             {...register("name", {
               required: { value: true, message: "Name is required" },
@@ -50,6 +50,7 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
         <FormField isError={!!errors.email}>
           <FormField.Label htmlFor="email">Email</FormField.Label>
           <FormField.Input
+            id="email"
             placeholder="Enter your email"
             type={"email"}
             {...register("email", {
@@ -70,12 +71,20 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
           <FormField.Label htmlFor="password">Password</FormField.Label>
           <PasswordField isError={!!errors.password}>
             <PasswordField.Input
+              id="password"
               placeholder="Enter a strong password"
               {...register("password", {
                 required: { value: true, message: "Password is required" },
                 minLength: {
                   value: 8,
                   message: "Password must be at least 8 characters",
+                },
+                pattern: {
+                  // pattern for at least one number, one lowercase, one uppercase, one special character
+                  value:
+                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[#!?@$%^&*]).{8,}$/,
+                  message:
+                    "Password must contain at least one number, one lowercase, one uppercase, one special character",
                 },
               })}
             />
@@ -94,6 +103,7 @@ export const SignupForm = ({ onSubmit, loading, formError }: Props) => {
           </FormField.Label>
           <PasswordField isError={!!errors.password2}>
             <PasswordField.Input
+              id="password2"
               placeholder="Re-enter your password"
               {...register("password2", {
                 required: {

@@ -71,6 +71,11 @@ importers:
       '@supabase/auth-helpers-react': ^0.3.1
       '@supabase/supabase-js': ^2.2.3
       '@tanstack/react-query': ^4.20.4
+      '@testing-library/dom': ^8.19.1
+      '@testing-library/jest-dom': ^5.16.5
+      '@testing-library/react': ^13.4.0
+      '@testing-library/user-event': ^14.4.3
+      '@types/jest': ^29.2.5
       '@types/node': ^17.0.12
       '@types/react': ^18.0.22
       '@types/react-dom': ^18.0.7
@@ -80,6 +85,8 @@ importers:
       axios: ^1.2.2
       eslint: 7.32.0
       eslint-config-custom: workspace:*
+      jest: ^29.3.1
+      jest-environment-jsdom: ^29.3.1
       next: ^13.0.0
       openapi-types: ^12.1.0
       orval: ^6.10.3
@@ -103,6 +110,11 @@ importers:
     devDependencies:
       '@babel/core': 7.20.7
       '@next/bundle-analyzer': 13.1.1
+      '@testing-library/dom': 8.19.1
+      '@testing-library/jest-dom': 5.16.5
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@testing-library/user-event': 14.4.3_ua4wuun3fnehcjqtqj2e2ldgpe
+      '@types/jest': 29.2.5
       '@types/node': 17.0.45
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
@@ -111,6 +123,8 @@ importers:
       api: link:../api
       eslint: 7.32.0
       eslint-config-custom: link:../../packages/eslint-config-custom-server
+      jest: 29.3.1_@types+node@17.0.45
+      jest-environment-jsdom: 29.3.1
       openapi-types: 12.1.0
       orval: 6.10.3_zkwotomts6h5nulovvchyf7t5q
       tsconfig: link:../../packages/tsconfig
@@ -5367,6 +5381,34 @@ packages:
       - ts-node
     dev: true
 
+  /jest-cli/29.3.1_@types+node@17.0.45:
+    resolution: {integrity: sha512-TO/ewvwyvPOiBBuWZ0gm04z3WWP8TIK8acgPzE4IxgsLKQgb377NYGrQLc3Wl/7ndWzIH2CDNNsUjGxwLL43VQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.3.1
+      '@jest/test-result': 29.3.1
+      '@jest/types': 29.3.1
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.10
+      import-local: 3.1.0
+      jest-config: 29.3.1_@types+node@17.0.45
+      jest-util: 29.3.1
+      jest-validate: 29.3.1
+      prompts: 2.4.2
+      yargs: 17.6.2
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+      - ts-node
+    dev: true
+
   /jest-config/29.3.1:
     resolution: {integrity: sha512-y0tFHdj2WnTEhxmGUK1T7fgLen7YK4RtfvpLFBXfQkh2eMJAQq24Vx9472lvn5wg0MAO6B+iPfJfzdR9hJYalg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -5768,6 +5810,26 @@ packages:
       '@jest/types': 29.3.1
       import-local: 3.1.0
       jest-cli: 29.3.1
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+      - ts-node
+    dev: true
+
+  /jest/29.3.1_@types+node@17.0.45:
+    resolution: {integrity: sha512-6iWfL5DTT0Np6UYs/y5Niu7WIfNv/wRTtN5RSXt2DIEft3dx3zPuw/3WJQBCJfmEzvDiEKwoqMbGD9n49+qLSA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.3.1
+      '@jest/types': 29.3.1
+      import-local: 3.1.0
+      jest-cli: 29.3.1_@types+node@17.0.45
     transitivePeerDependencies:
       - '@types/node'
       - supports-color

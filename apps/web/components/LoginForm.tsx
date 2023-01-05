@@ -17,7 +17,7 @@ export const LoginForm = ({ onSubmit, loading, formError }: Props) => {
   } = useForm<LoginData>();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} name="login">
       <Flex direction="column" gap={15}>
         <FormField isError={!!errors.email}>
           <FormField.Label htmlFor="email">Email</FormField.Label>
@@ -48,7 +48,7 @@ export const LoginForm = ({ onSubmit, loading, formError }: Props) => {
           )}
         </FormField>
         {formError && <FormError>{formError}</FormError>}
-        <button type="submit" disabled={loading}>
+        <button type="submit" name="login" disabled={loading}>
           Login
         </button>
       </Flex>

@@ -5,6 +5,7 @@
   "scripts": {
     "generate:api": "orval --config ./orval.config.ts",
     "dev": "next dev",
+    "test": "jest --watch",
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
@@ -25,6 +26,11 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@next/bundle-analyzer": "^13.1.1",
+    "@testing-library/dom": "^8.19.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.2.5",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
@@ -33,6 +39,8 @@
     "api": "workspace:*",
     "eslint": "7.32.0",
     "eslint-config-custom": "workspace:*",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
     "openapi-types": "^12.1.0",
     "orval": "^6.10.3",
     "tsconfig": "workspace:*",
