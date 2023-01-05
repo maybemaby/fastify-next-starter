@@ -4,6 +4,7 @@ import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import "~/styles/global.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
