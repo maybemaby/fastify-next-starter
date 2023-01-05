@@ -49,6 +49,7 @@ const Input = forwardRef(function _input(
       className={`${className ?? styles.input}`}
       type={ctx.showPassword ? "text" : "password"}
       ref={ref}
+      name="password"
       {...props}
     />
   );
