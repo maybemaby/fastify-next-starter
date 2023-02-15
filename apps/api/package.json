@@ -2,8 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/server.ts",
-  "types": "./src/index.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "build": "tsc",
     "generate": "prisma generate",
