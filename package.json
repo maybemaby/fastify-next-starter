@@ -7,6 +7,8 @@
     "packages/*"
   ],
   "scripts": {
+    "dev:db-up": "docker run --name pg-dev -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=pgdev -p 5432:5432 postgres",
+    "test:db-up": "docker run --name pg-test -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=pgtest -p 5432:5432 postgres",
     "generate": "turbo run generate",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel --force",

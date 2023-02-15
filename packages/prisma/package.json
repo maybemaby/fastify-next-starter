@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "generate": "prisma generate",
+    "dev:migrate": "prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

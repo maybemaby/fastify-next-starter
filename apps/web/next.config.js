@@ -6,5 +6,6 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   experimental: {
     transpilePackages: ["ui"],
+    swcMinify: true,
   },
 });
