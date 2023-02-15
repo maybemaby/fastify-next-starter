@@ -21,7 +21,7 @@ export const userRouter: FastifyPluginCallback = (fastify, opts, done) => {
         },
       },
       async (req, res) => {
-        const user = req.user!;
+        const user = req.user;
         return user;
       }
     );

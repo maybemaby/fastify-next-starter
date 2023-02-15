@@ -1,26 +1,28 @@
 import { User } from "@supabase/supabase-js";
 import { FastifyPluginCallback, FastifyReply, FastifyRequest } from "fastify";
 import fp from "fastify-plugin";
+import jwt from "@fastify/jwt";
+import { env } from "../config/env";
 
 const authorization: FastifyPluginCallback = (fastify, opts, done) => {
   // Decorate requests with a user instance, defaults to null
-  fastify.decorateRequest("user", null);
+
+  fastify.register(jwt, {
+    secret: env.SUPABASE_JWT_SECRET,
+    verify: {
+      maxAge: 3600,
+    },
+    formatUser(payload) {
+      return payload["payload"];
+    },
+  });
 
   // Add an authorize method to the fastify instance
   fastify.decorate("authorize", authorize);
 
   async function authorize(req: FastifyRequest, res: FastifyReply) {
-    const token = extractToken(req);
-    if (!token) {
-      // Using fastify-sensible response helpers
-      return res.unauthorized("Must be logged in to access resource");
-    }
-    const { allowed, err, user } = await userAllowed(token);
-    if (!allowed) {
-      return false;
-    } else if (user) {
-      req.user = user;
-    }
+    await req.jwtVerify({ complete: true });
+    return true;
   }
 
   // Takes a token value from Authorization: Bearer headers returns null if not found

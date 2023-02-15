@@ -70,7 +70,7 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "extends": "tsconfig/base.json",
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "@fastify/jwt/jwt.d.ts"],
   "exclude": ["./node_modules", "dist"],
   "files": ["src/index.d.ts"]
 }

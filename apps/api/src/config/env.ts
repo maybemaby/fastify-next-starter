@@ -9,6 +9,7 @@ const Env = Type.Object({
   ALLOWED_ORIGINS: Type.String({}),
   SUPABASE_URL: Type.String(),
   SUPABASE_SERVICE_KEY: Type.String(),
+  SUPABASE_JWT_SECRET: Type.String(),
 });
 
 export const env = Value.Cast(Env, process.env);
