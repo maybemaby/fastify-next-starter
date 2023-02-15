@@ -8,7 +8,7 @@ importers:
       prettier: ^2.8.4
       turbo: ^1.7.4
     devDependencies:
-      eslint-config-custom: link:packages/eslint-config-custom-server
+      eslint-config-custom: link:packages/eslint-config-custom
       prettier: 2.8.4
       turbo: 1.7.4
 
@@ -18,7 +18,7 @@ importers:
       '@fastify/helmet': ^10.1.0
       '@fastify/jwt': ^6.5.0
       '@fastify/sensible': ^5.2.0
-      '@fastify/swagger': ^8.2.1
+      '@fastify/swagger': ^8.3.1
       '@fastify/type-provider-typebox': ^2.4.0
       '@prisma/client': ^4.8.0
       '@sinclair/typebox': ^0.25.16
@@ -43,7 +43,7 @@ importers:
       '@fastify/helmet': 10.1.0
       '@fastify/jwt': 6.5.0
       '@fastify/sensible': 5.2.0
-      '@fastify/swagger': 8.2.1
+      '@fastify/swagger': 8.3.1
       '@fastify/type-provider-typebox': 2.4.0_4733z4bellfp27s6npbojqoxku
       '@prisma/client': 4.8.0_prisma@4.8.0
       '@sinclair/typebox': 0.25.16
@@ -913,8 +913,8 @@ packages:
       vary: 1.1.2
     dev: false
 
-  /@fastify/swagger/8.2.1:
-    resolution: {integrity: sha512-nYP/3ncrI5YmaGiJf6m+CLdFrdlWSsASHBPqP9uN9/oFFwDJwdUtq0ylmvObxzqWNVt9zT50iT/uvIndVEsvbg==}
+  /@fastify/swagger/8.3.1:
+    resolution: {integrity: sha512-S9suS5WlRyADwobkrlcNeICkVyHFxKKdsimRsoO7h27KS86c+pE/s/8WvU793p5Ftk9QnApoilT9izJ0j3I8GA==}
     dependencies:
       fastify-plugin: 4.4.0
       json-schema-resolver: 2.0.0
