@@ -7,9 +7,11 @@
     "build": "tsc",
     "generate": "prisma generate",
     "dev": "dotenv -e .env.dev -- ts-node-dev ./src/server.ts",
+    "dev:migrate": "prisma migrate dev",
     "dev:db-up": "docker run --name pg-dev -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=pgdev -p 5432:5432 postgres",
     "lint": "tsc --noEmit && TIMING=1 eslint \"src/**/*.ts*\"",
-    "test": "dotenv -e .env.test -- tap src/**/*.test.ts --ts --no-check-coverage"
+    "test": "dotenv -e .env.test -- tap src/**/*.test.ts --ts --no-check-coverage",
+    "test:db-up": "docker run --name pg-test -d -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=pgtest -p 5432:5432 postgres"
   },
   "keywords": [],
   "author": "maybemaby",
