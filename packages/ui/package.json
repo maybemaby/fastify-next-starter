@@ -9,7 +9,7 @@
     "dev": "tsup --format cjs,esm --dts --external react --watch",
     "build": "tsup src/index.tsx --format cjs,esm --dts --external react",
     "lint": "eslint *.ts*",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.19.1",

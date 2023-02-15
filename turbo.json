@@ -10,8 +10,14 @@
     "lint": {
       "outputs": []
     },
+    "generate": {
+      "cache": true,
+      "inputs": ["schema.prisma"]
+    },
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^generate"]
     },
     "test": {
       "outputs": []

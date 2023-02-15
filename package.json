@@ -7,20 +7,20 @@
     "packages/*"
   ],
   "scripts": {
+    "generate": "turbo run generate",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel --force",
     "test": "turbo run test",
-    "lint": "turbo run lint --filter=!schema --filter=!ui",
+    "lint": "turbo run lint --filter=!schema",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "prettier": "latest",
-    "turbo": "latest"
+    "prettier": "^2.8.4",
+    "turbo": "^1.7.4"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.20.0"
 }
